@@ -1,11 +1,20 @@
-﻿Console.WriteLine("Введите число: ");
+﻿Console.WriteLine("Введите первое число: ");
 int numbera = Convert.ToInt32(Console.ReadLine());
-int numberb = 2;
-if(numbera % numberb == 0)
+Console.WriteLine("Введите второе число: ");
+int numberb = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите третье число: ");
+int numberc = Convert.ToInt32(Console.ReadLine());
+if(numbera > numberb)
 {
-    Console.WriteLine("Да");
+    Console.WriteLine($"{numbera}");
 }
-else
+
+if(numberb > numberc)
 {
-    Console.WriteLine("Нет");
+    Console.WriteLine($"{numberb}");
+}
+
+if(numberc > numbera)
+{
+    Console.WriteLine($"{numberc}");
 }
