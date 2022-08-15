@@ -1,13 +1,15 @@
-﻿Console.WriteLine("Введите первое число: ");
-int numbera = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите второе число: ");
-int numberb = Convert.ToInt32(Console.ReadLine());
-if(numbera > numberb)
-{
-    Console.WriteLine($"{numbera}");
-}
+﻿// 645 -> 5
+// 78 -> третьей цифры нет
+// 32679 -> 6
 
-if(numbera < numberb)
+Console.WriteLine("Введите число: ");
+int anyNumber = Convert.ToInt32(Console.ReadLine());
+string anyNumberText = Convert.ToString(anyNumber);
+if (anyNumberText.Length > 2)
 {
-    Console.WriteLine($"{numberb}");
+  Console.WriteLine(anyNumberText[2]);
+}
+else 
+{
+  Console.WriteLine("третьей цифры нет");
 }
