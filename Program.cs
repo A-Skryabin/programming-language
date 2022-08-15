@@ -1,13 +1,16 @@
-﻿Console.WriteLine("Введите первое число: ");
-int numbera = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите второе число: ");
-int numberb = Convert.ToInt32(Console.ReadLine());
-if(numbera > numberb)
-{
-    Console.WriteLine($"{numbera}");
-}
+﻿//Задача 15: 
+// 6 -> да
+// 7 -> да
+// 1 -> нет
 
-if(numbera < numberb)
+Console.WriteLine("Введите цифру, обозначающую день недели: ");
+int dayNumber = Convert.ToInt32(Console.ReadLine());
+
+if(dayNumber == 6 || dayNumber == 7)
 {
-    Console.WriteLine($"{numberb}");
+    Console.WriteLine("да");
+}
+else
+{
+    Console.WriteLine("нет");
 }
