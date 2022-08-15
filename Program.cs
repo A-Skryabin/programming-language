@@ -1,13 +1,9 @@
-﻿Console.WriteLine("Введите первое число: ");
-int numbera = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите второе число: ");
-int numberb = Convert.ToInt32(Console.ReadLine());
-if(numbera > numberb)
-{
-    Console.WriteLine($"{numbera}");
-}
+﻿// Задача 10: 
+// 456 -> 5
+// 782 -> 8
+// 918 -> 1
 
-if(numbera < numberb)
-{
-    Console.WriteLine($"{numberb}");
-}
+Console.WriteLine("Введите трехзначное число: ");
+int A = Convert.ToInt32(Console.ReadLine());
+int B = A%100/10;
+Console.WriteLine(B);
