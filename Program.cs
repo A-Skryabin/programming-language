@@ -1,13 +1,8 @@
-﻿Console.WriteLine("Введите первое число: ");
-int numbera = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите второе число: ");
-int numberb = Convert.ToInt32(Console.ReadLine());
-if(numbera > numberb)
-{
-    Console.WriteLine($"{numbera}");
-}
+﻿// Задача 23
+// 3 -> 1, 8, 27
+// 5 -> 1, 8, 27, 64, 125
 
-if(numbera < numberb)
-{
-    Console.WriteLine($"{numberb}");
-}
+Console.WriteLine("Введите число N: ");
+int N = Convert.ToInt32(Console.ReadLine());
+for (int i = 1, j = 1, y = 1; i < N+1; i++, j++, y++)
+    Console.Write($" {i * j * y}");
