@@ -1,13 +1,21 @@
-﻿Console.WriteLine("Введите первое число: ");
-int numbera = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите второе число: ");
-int numberb = Convert.ToInt32(Console.ReadLine());
-if(numbera > numberb)
-{
-    Console.WriteLine($"{numbera}");
-}
+﻿// Задачача 19:
+// 14212 -> нет
+// 12821 -> да
+// 23432 -> да
 
-if(numbera < numberb)
+Console.WriteLine("Введите пятизначное число: ");
+int N = Convert.ToInt32(Console.ReadLine());
+int i, j, sum=0;
+for(j=N; N!=0; N=N/10)
 {
-    Console.WriteLine($"{numberb}");
+    i=N % 10;
+    sum=sum*10+i;
 }
+    if(j==sum)
+    {
+         Console.WriteLine("Да");
+    }
+    else
+    {
+         Console.WriteLine("Нет");	 
+    }
