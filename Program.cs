@@ -1,13 +1,15 @@
-﻿Console.WriteLine("Введите первое число: ");
-int numbera = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите второе число: ");
-int numberb = Convert.ToInt32(Console.ReadLine());
-if(numbera > numberb)
-{
-    Console.WriteLine($"{numbera}");
-}
+﻿// Задача 25: 
+// 3, 5 -> 243 (3⁵)
+// 2, 4 -> 16
 
-if(numbera < numberb)
+
+Console.WriteLine("Введите число A: ");
+int a = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите число B: ");
+int b = Convert.ToInt32(Console.ReadLine());
+int deg = a;
+for(int i = 1; i < b; i++)
 {
-    Console.WriteLine($"{numberb}");
+    deg = deg * a;
 }
+Console.WriteLine($"{deg}");
