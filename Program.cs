@@ -1,13 +1,15 @@
-﻿Console.WriteLine("Введите первое число: ");
-int numbera = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите второе число: ");
-int numberb = Convert.ToInt32(Console.ReadLine());
-if(numbera > numberb)
-{
-    Console.WriteLine($"{numbera}");
-}
+﻿// Задача 27: 
+// 452 -> 11
+// 82 -> 10
+// 9012 -> 12
 
-if(numbera < numberb)
+Console.WriteLine("Введите число N: ");
+int N = Convert.ToInt32(Console.ReadLine());
+int sum = 0;
+while (N > 0)
 {
-    Console.WriteLine($"{numberb}");
+    int num = N % 10;
+    N /= 10;
+    sum = sum + num;
 }
+Console.WriteLine ($"{sum}");
