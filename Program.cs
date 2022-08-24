@@ -1,13 +1,44 @@
-﻿Console.WriteLine("Введите первое число: ");
-int numbera = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите второе число: ");
-int numberb = Convert.ToInt32(Console.ReadLine());
-if(numbera > numberb)
+﻿// Задача 38: Задайте с клавиатуры массив вещественных (double) чисел. 
+// Найдите разницу между макс. и мин. элементов массива.
+// [3 7 22 2 78] -> 76
+
+Console.WriteLine("Введите размер массива");
+int size = Convert.ToInt32(Console.ReadLine());
+double[] numbers = new double[size];
+FillArrayRandomNumbers(numbers);
+PrintArray(numbers);
+double min = Int32.MaxValue;
+double max = Int32.MinValue;
+
+for (int z = 0; z < numbers.Length; z++)
 {
-    Console.WriteLine($"{numbera}");
+    if (numbers[z] > max)
+        {
+            max = numbers[z];
+        }
+    if (numbers[z] < min)
+        {
+            min = numbers[z];
+        }
 }
 
-if(numbera < numberb)
+Console.WriteLine($"всего {numbers.Length} чисел. Макс значение = {max}, мин значение = {min}");
+Console.WriteLine($"Разница между макс и мин = {max - min}");
+
+void FillArrayRandomNumbers(double[] numbers)
 {
-    Console.WriteLine($"{numberb}");
+    for(int i = 0; i < numbers.Length; i++)
+        {
+            numbers[i] = Convert.ToDouble(new Random().Next(100,1000)) / 100;
+        }
+}
+void PrintArray(double[] numbers)
+{
+    Console.Write("[ ");
+    for(int i = 0; i < numbers.Length; i++)
+        {
+            Console.Write(numbers[i] + " ");
+        }
+    Console.Write("]");
+    Console.WriteLine();
 }
