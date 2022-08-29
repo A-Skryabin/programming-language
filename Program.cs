@@ -1,13 +1,31 @@
-﻿Console.WriteLine("Введите первое число: ");
-int numbera = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите второе число: ");
-int numberb = Convert.ToInt32(Console.ReadLine());
-if(numbera > numberb)
+﻿// Задача 41: Пользователь вводит с клавиатуры M чисел. 
+// Посчитайте, сколько чисел больше 0 ввёл пользователь.
+// 0, 7, 8, -2, -2 -> 2
+// 1, -7, 567, 89, 223-> 3
+
+Console.Write($"Введите число М(количество чисел): ");
+int m = Convert.ToInt32(Console.ReadLine());
+int[] massiveNumbers = new int[m];
+
+void InputNumbers(int m)
 {
-    Console.WriteLine($"{numbera}");
+for (int i = 0; i < m; i++)
+    {
+    Console.Write($"Введите {i+1} число: ");
+    massiveNumbers[i] = Convert.ToInt32(Console.ReadLine());
+    }
 }
 
-if(numbera < numberb)
+int Comparison(int[] massiveNumbers)
 {
-    Console.WriteLine($"{numberb}");
+int count = 0;
+    for (int i = 0; i < massiveNumbers.Length; i++)
+    {
+    if(massiveNumbers[i] > 0 ) count += 1;
+    }
+    return count;
 }
+
+InputNumbers(m);
+
+Console.WriteLine($"Чисел > 0: {Comparison(massiveNumbers)} ");
