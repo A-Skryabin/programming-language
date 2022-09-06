@@ -1,13 +1,24 @@
-﻿Console.WriteLine("Введите первое число: ");
-int numbera = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите второе число: ");
-int numberb = Convert.ToInt32(Console.ReadLine());
-if(numbera > numberb)
+﻿// Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. 
+// Даны два неотрицательных числа m и n.
+// m = 3, n = 2 -> A(m,n) = 29
+
+int m = InputNumbers("Введите m: ");
+int n = InputNumbers("Введите n: ");
+
+int functionAkkerman = Ack(m, n);
+
+Console.Write($"A(m,n) = {functionAkkerman} ");
+
+int Ack(int m, int n)
 {
-    Console.WriteLine($"{numbera}");
+  if (m == 0) return n + 1;
+  else if (n == 0) return Ack(m - 1, 1);
+  else return Ack(m - 1, Ack(m, n - 1));
 }
 
-if(numbera < numberb)
+int InputNumbers(string input) 
 {
-    Console.WriteLine($"{numberb}");
+  Console.Write(input);
+  int output = Convert.ToInt32(Console.ReadLine());
+  return output;
 }
