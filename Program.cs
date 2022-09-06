@@ -1,13 +1,34 @@
-﻿Console.WriteLine("Введите первое число: ");
-int numbera = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите второе число: ");
-int numberb = Convert.ToInt32(Console.ReadLine());
-if(numbera > numberb)
+﻿// Задача 66: Задайте значения M и N. Напишите программу, которая 
+// найдёт сумму натуральных элементов в промежутке от M до N.
+// M = 1; N = 15 -> 120
+// M = 4; N = 8. -> 30
+
+int m = InputNumbers("Введите m: ");
+int n = InputNumbers("Введите n: ");
+int temp = m;
+
+if (m > n) 
 {
-    Console.WriteLine($"{numbera}");
+  m = n; 
+  n = temp;
 }
 
-if(numbera < numberb)
+PrintSumm(m, n, temp=0);
+
+void PrintSumm(int m, int n, int summ)
 {
-    Console.WriteLine($"{numberb}");
+  summ = summ + n;
+  if (n <= m)
+  {
+    Console.Write($"Сумма = {summ} ");
+    return;
+  }
+  PrintSumm(m, n - 1, summ);
+}
+
+int InputNumbers(string input) 
+{
+  Console.Write(input);
+  int output = Convert.ToInt32(Console.ReadLine());
+  return output;
 }
